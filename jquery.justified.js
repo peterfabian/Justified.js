@@ -138,8 +138,8 @@
                 }
 
                 // Ratio of actual width of row to total width of images to be used.
-                var r = availableRowWidth / row.width, //Math.min(w / row.width, this.options.maxScale),
-                    c = row.photos.length;
+                var c = row.photos.length;
+                var r = availableRowWidth / (row.width + (c - 1) * border); //Math.min(w / row.width, this.options.maxScale),
 
                 // new height is not original height * ratio
                 var ht = Math.min(Math.floor(h * r), parseInt(this.options.maxRowHeight,10));
